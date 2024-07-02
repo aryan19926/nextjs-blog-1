@@ -38,7 +38,7 @@ export const postBySlugQuery = (slug: string) => {
       posts: {
         __args: { first: 1, filter: { _sys_slug: { eq: slug } } },
         items: POST_FRAGMENT,
-      },
+      }, 
     },
   } satisfies QueryGenqlSelection;
 };

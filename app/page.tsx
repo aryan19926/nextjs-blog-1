@@ -15,9 +15,10 @@ export default async function Page() {
     >
       {async ([{ blog }]) => {
         "use server";
+        const a=Math.floor(Math.random()*(blog.posts.items.length));
 
-        const heroPost = blog.posts.items[0];
-        const morePosts = blog.posts.items.slice(1);
+        const heroPost = blog.posts.items[a];
+        const morePosts = blog.posts.items.slice(0,a).concat(blog.posts.items.slice(a+1));
 
         return (
           <main>
