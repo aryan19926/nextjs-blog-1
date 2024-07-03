@@ -58,7 +58,8 @@ export default async function PostPage({
         "use server";
 
         const [post] = blog.posts.items;
-        console.log(post);
+        
+        
         if (!post) notFound();
 
         const morePosts = await getMorePosts(
