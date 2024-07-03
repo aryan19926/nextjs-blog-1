@@ -5,6 +5,7 @@ import Date from "@/app/components/date";
 import BodyImage from "./body-image";
 import CodeBlock from "@/app/components/code-block";
 import { Post as TPost } from "@/lib/queries";
+import { Video } from "./video";
 
 export default function Post({ post }: { post: TPost }) {
   return (
@@ -35,6 +36,10 @@ export default function Post({ post }: { post: TPost }) {
         <div className="mb-12 text-base dark:text-white/60 text-black/60 block md:hidden">
           <Date dateString={post.date} />
         </div>
+        <div className="mb-12 text-base dark:text-white/60 text-black/60 block md:hidden">
+          <Video src=""></Video>
+        </div>
+        
       </div>
 
       <div className="mx-auto max-w-2xl">

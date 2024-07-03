@@ -21,7 +21,7 @@ export async function generateStaticParams() {
       },
     },
   });
-
+  
   return posts.items.map((post) => ({ slug: post._slug }));
 }
 
@@ -50,7 +50,7 @@ export default async function PostPage({
 }) {
   return (
     <Pump
-      next={{ revalidate: 60 }}
+      next={{ revalidate: 0 }}
       draft={draftMode().isEnabled}
       queries={[postBySlugQuery(params.slug)]}
     >
@@ -58,6 +58,7 @@ export default async function PostPage({
         "use server";
 
         const [post] = blog.posts.items;
+        console.log(post);
         if (!post) notFound();
 
         const morePosts = await getMorePosts(

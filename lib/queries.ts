@@ -28,6 +28,8 @@ export const POST_FRAGMENT = {
   },
   date: true,
   excerpt: true,
+
+  
 } satisfies PostsItemGenqlSelection;
 
 export type Post = FieldsSelection<PostsItem, typeof POST_FRAGMENT>;
